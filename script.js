@@ -16,4 +16,4 @@ appData.expenses[prompt("Введите обязательную статью р
 appData.expenses[prompt("Введите обязательную статью расходов в этом месяце")] = 
     Number(prompt("Во сколько обойдется?"));
 
-console.log(appData);
+    
