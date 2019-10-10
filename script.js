@@ -35,3 +35,12 @@ window.addEventListener('DOMContentLoaded',function() {
     });
 
 });
+
+var deadLine = '2020-01-01'; // может приходить с сервера
+
+function getTimeRemaining(endTime){
+    var time = Date.parse(endTime)-Date.parse(new Date()),
+        seconds = Math.floor((time/1000) % 60),
+        minutes = Math.floor((time/1000/60) % 60),
+        hours = Math.floor((time/(1000*60*60)));
+}
