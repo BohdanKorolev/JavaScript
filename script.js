@@ -139,5 +139,45 @@ window.addEventListener('DOMContentLoaded',function() {
            }
        }
     });
+
+
+    //Calc
+
+    let persons = document.querySelectorAll('.counter-block-input')[0],
+        restDays = document.querySelectorAll('.counter-block-input')[1],
+        place = document.querySelector('#select'),
+        totalValue = document.querySelector('#total'),
+        personsSum = 0,
+        daysSum = 0,
+        total = 0;
+
+    totalValue.innerHTML = total;
+
+    persons.addEventListener('input', function () {
+        personsSum = +this.value;
+        total = (daysSum * personsSum) * 4000;
+        if (restDays.value != '' && persons.value != '') {
+            totalValue.innerHTML = total;
+        }else {
+            totalValue.innerHTML = 0
+        }
+    });
+
+    restDays.addEventListener('input', function () {
+        daysSum = +this.value;
+        total = (daysSum * personsSum) * 4000;
+        if (restDays.value != '' && persons.value != '') {
+            totalValue.innerHTML = total;
+        }else {
+            totalValue.innerHTML = 0
+        }
+    });
+
+    place.addEventListener('change', function () {
+        if (restDays.value != '' && persons.value != '') {
+            let a = +this.options[this.selectedIndex].value;
+            totalValue.innerHTML = a * total;
+        }
+    })
 });
 
